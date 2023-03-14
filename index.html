@@ -59,8 +59,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		
 		//this function calculates the percentage of questions that determine whether the symptoms indicate allergy or cold
 	function getResult() {
-    		var allergyPercent = (allergy_count/4)*100; //divides the allergy count by the total number of questons asked (4) and converts to percentage.
-    		var coldPercent = (cold_count/4)*100; //divides the cold count by the total number of questons asked (4) and converts to percentage
+    		var allergyPercent = (allergy_count/6)*100; //divides the allergy count by the total number of questons asked (4) and converts to percentage.
+    		var coldPercent = (cold_count/6)*100; //divides the cold count by the total number of questons asked (4) and converts to percentage
     		var resultText = document.getElementById("results");
     resultText.innerHTML = "Percentage it is allergies =" + allergyPercent + "<br> Percentage it is a cold =" + coldPercent;
         }
@@ -183,16 +183,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     </div>
 	<!--End of Page 4-->
 
-     <!-- New Question for Cold-->
+     <!-- New Cold Question-->
 <div class="page" id="five">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 5</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are you experiencing any body aches?</p> <!--Question 5-->
-			<!--Create Yes and No buttons for user to press in response to the question-->
-			<!--Regardless of answer choice, send user to next page-->
+		<p>Do you have body aches?</p> <!--Question 5-->
+			<!--Yes and No buttons for user to press in response to the question-->
+			<!--send user to next page-->
 			<a href="#six" class="w3-btn w3-grey w3-round" onclick="coldAdd()"> Yes </a>
 			<!--If user selects Yes to this question, add one to cold count-->
 			<a href="#six" class="w3-btn w3-grey w3-round" onclick="allergyAdd()"> No </a>
@@ -201,16 +201,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>	
 <!--End of Page 5-->
 	
-<!--New Question for Allergy-->
+<!--New Allergy Question-->
 <div class="page" id="six">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 6</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Is your cough a dry cough?</p> <!--Question 6-->
-			<!--Create Yes and No buttons for user to press in response to the question-->
-			<!--Regardless of answer choice, send user to next page-->
+		<p>Do you have a skin rash or hives?</p> <!--Question 6-->
+			<!--Yes and No buttons for user to press in response to the question-->
+			<!--send user to next page-->
 			<a href="#results" class="w3-btn w3-grey w3-round" onclick="allergyAdd()"> Yes </a>
 			<!--If user selects Yes to this question, add one to allergy count-->
 			<a href="#results" class="w3-btn w3-grey w3-round" onclick="coldAdd()"> No </a>
@@ -222,17 +222,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <!--Page 7 Content Below (Results Page)-->
 <div class="page" id="results">
 	
-	<!--Container 1 with the "Results" title-->
+
 	<div class="w3-container w3-flat-carrot">
 		<h1>Results</h1>
 	</div>
 	
-	<!--Container 2 with the Instructions for the page-->
+	
 	<div id="content" class="w3-container">
 		<p>Click the button below to find out your results!</p>
 	</div>
 	
-	<!--Container 3 with the button for the user to press-->
+	
 	<div id="content" class="w3-container">
 		<button onclick="getResult();"> Results </button>
 		<p id="results"></p>
